@@ -27,7 +27,7 @@ public class DateTimeGapFinder {
 		DateTime searchStart = searchInterval.getStart();
 		DateTime searchEnd = searchInterval.getEnd();
 
-		if (hasNoOverlap(existingIntervals, searchInterval, searchStart, searchEnd)) {
+		if (existingIntervals.isEmpty() || hasNoOverlap(existingIntervals, searchInterval, searchStart, searchEnd)) {
 			gaps.add(searchInterval);
 			return gaps;
 		}
